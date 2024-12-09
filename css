@@ -1,0 +1,156 @@
+!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jurassic Park</title>
+</head>
+
+<style>
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #500;
+}
+
+header {
+    background-color: #333;
+    color: rgb(63, 49, 49);
+    padding: 10px 0;
+    text-align: center;
+}
+
+header nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+header nav ul li {
+    display: inline;
+    margin: 0 10px;
+}
+
+header nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+section {
+    padding: 20px;
+    margin: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+form div {
+    margin-bottom: 10px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+input {
+    padding: 8px;
+    width: 100%;
+    box-sizing: border-box;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+}
+
+button {
+    background-color: #28a745;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #218838;
+}
+
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #333;
+    color: white;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+</style>
+<body>
+    <header>
+        <h1>Jurassic Park</h1>
+        <nav>
+            <ul>
+                <li><a href="#criador">Criador de Nome de Dinossauro</a></li>
+                <li><a href="#">Outras Seções</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="criador">
+        <h2>Criador de Nome de Dinossauro</h2>
+        <form id="formDinoName">
+            <div>
+                <label for="primeira-silaba">Primeira sílaba do nome:</label>
+                <input type="text" id="primeira-silaba" name="primeira-silaba" required>
+            </div>
+            <div>
+                <label for="ultima-silaba">Última sílaba do nome:</label>
+                <input type="text" id="ultima-silaba" name="ultima-silaba" required>
+            </div>
+            <div>
+                <label for="primeira-silaba-sobrenome">Primeira sílaba do sobrenome:</label>
+                <input type="text" id="primeira-silaba-sobrenome" name="primeira-silaba-sobrenome" required>
+            </div>
+            <div>
+                <label for="ultima-silaba-sobrenome">Última sílaba do sobrenome:</label>
+                <input type="text" id="ultima-silaba-sobrenome" name="ultima-silaba-sobrenome" required>
+            </div>
+            <button type="submit">Gerar Nome</button>
+        </form>
+        <p id="resultado"></p>
+        <p id="erro" style="color: red; display: none;">Por favor, preencha todos os campos.</p>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Jurassic Park. Todos os direitos reservados.</p>
+    </footer>
+
+    <script>
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const form = document.getElementById('formDinoName');
+            const resultado = document.getElementById('resultado');
+            const erro = document.getElementById('erro');
+        
+            form.addEventListener('submit', function (event) {
+                event.preventDefault();  
+        
+               
+                const primeiraSilaba = document.getElementById('primeira-silaba').value.trim();
+                const ultimaSilaba = document.getElementById('ultima-silaba').value.trim();
+                const primeiraSilabaSobrenome = document.getElementById('primeira-silaba-sobrenome').value.trim();
+                const ultimaSilabaSobrenome = document.getElementById('ultima-silaba-sobrenome').value.trim();
+
+   if (confirmacao) {
+                    const nomeDino = ${primeiraSilaba}${ultimaSilaba}${primeiraSilabaSobrenome}${ultimaSilabaSobrenome}sauro;
+                    resultado.textContent = Nome gerado do dinossauro: ${nomeDino};
+                } else {
+                    resultado.textContent = '';  
+                }
+            });
+        });
+        
+    </script>
+</body>
+</html>
